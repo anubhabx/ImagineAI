@@ -1,10 +1,11 @@
 import { Schema, model, models } from "mongoose";
 
-export interface Image extends Document {
+export interface IImage extends Document {
+  _id: any;
   title: string;
   transformationType: string;
   publicId: string;
-  secureUrl: string;
+  secureURL: string;
   width?: number;
   height?: number;
   config?: object;
@@ -34,8 +35,8 @@ const ImageSchema = new Schema({
     type: String,
     required: true,
   },
-  secureUrl: {
-    type: URL,
+  secureURL: {
+    type: String,
     required: true,
   },
   width: {
@@ -48,7 +49,7 @@ const ImageSchema = new Schema({
     type: Object,
   },
   tranformationURL: {
-    type: URL,
+    type: String,
   },
   aspectRatio: {
     type: String,
