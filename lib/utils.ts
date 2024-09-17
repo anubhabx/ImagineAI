@@ -10,7 +10,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const handleError = (error: unknown) => {
+export const handleError = (error: any) => {
   if (error instanceof Error) {
     console.error(error.message);
     throw new Error(`Error: ${error.message}`);
